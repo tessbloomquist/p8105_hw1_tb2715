@@ -92,7 +92,7 @@ This vector contains `r round(rows)` rows and `r round(columns)` columns. Additi
 The proportion of cases for which x + y > 1 is `r round(proportion, digits = 2)`
 
 ```{r}
-ggplot(plot_df, aes(x = x, y = y)) + geom_point()
+ggplot(plot_df, aes(x = x, y = y, color = darkcyan)) + geom_point()
 
 ggsave("plot_df.pdf", width = 4, height = 4)
 
