@@ -43,3 +43,23 @@ eight_rand_df_V2 = tibble(
 ```
 
 Above, when the values are transformed to numerical values, the return is still NA as they cannot be transformed to a numerical value. NAs are introduced via coercion. 
+
+```{r numeric variables vs factors}
+numeric_eight_rand_df = tibble(
+  norm_samp = rnorm(8),
+  vec_logical = as.numeric(norm_samp > 0), 
+  norm_samp1 = (vec_logical * norm_samp)) 
+  
+ logical_eight_rand_df = tibble(
+  norm_samp = rnorm(8),
+  vec_logical = factor(norm_samp > 0), 
+  norm_samp2 = (vec_logical * norm_samp)) 
+
+factor_and_numeric_eight_rand_df = tibble(
+  norm_samp = rnorm(8),
+  vec_logical = factor(norm_samp > 0),
+  vec_logical1 = as.numeric(vec_logical),
+  norm_samp3 = (vec_logical1 * norm_samp)) 
+```
+
+Above, the classification of variables is manipulated to factors and numeric values. When a variable is classified as a factor, it cannot be used as a number in functions such as trying to multiply variables. When the logical value is a factor and then manipulated to be numeric, the values are different than when originally classified as numeric. 
