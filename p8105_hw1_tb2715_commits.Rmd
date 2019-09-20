@@ -87,7 +87,7 @@ columns = ncol(plot_df)
 proportion = mean(pull(plot_df, vec_logical))
 ```
 
-This vector contains `r round(rows)` and `r round(columns)`. Additionally, the mean of x is `r round(mean_samp, digits = 2)`, the median of x is `r round(median_samp, digits = 2)`, and the standard deviation of x is `r round(stdev_samp, digits = 2)`.
+This vector contains `r round(rows)` rows and `r round(columns)` columns. Additionally, the mean of x is `r round(mean_samp, digits = 2)`, the median of x is `r round(median_samp, digits = 2)`, and the standard deviation of x is `r round(stdev_samp, digits = 2)`.
 
 The proportion of cases for which x + y > 1 is `r round(proportion, digits = 2)`
 
