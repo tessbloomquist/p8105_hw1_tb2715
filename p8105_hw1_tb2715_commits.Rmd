@@ -31,3 +31,15 @@ mean(pull(eight_rand_df, vec_char))
 
 mean(pull(eight_rand_df, vec_factor))
 ```
+
+The mean of the samples cannot be computed for vec_char and vec_ factor. The argument is not numerical. 
+
+```{r variable type manipulation, eval = FALSE}
+eight_rand_df_V2 = tibble(
+  norm_samp = rnorm(8),
+  vec_logical = as.numeric(norm_samp > 0),
+  vec_char = as.numeric(c("I", "enjoy", "yoga", "cookies", "nature", "dogs", "sunshine", "family")),
+  vec_factor = as.numeric(factor(c("orange", "orange", "orange", "orange","blue", "blue", "blue", "magenta" ))))
+```
+
+Above, when the values are transformed to numerical values, the return is still NA as they cannot be transformed to a numerical value. NAs are introduced via coercion. 
