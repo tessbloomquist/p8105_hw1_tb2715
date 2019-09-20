@@ -5,14 +5,14 @@ date: "9/20/2019"
 output: github_document
 ---
 
-#Setup
-```{r setup, include=FALSE}
+##Setup
+```{r setup}
 knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
 ```
 
-#Problem 1
+##Problem 1
 
 The chunk below creates a dataframe containing a sample of size 8 from a random normal distribution. Samples are classified as above or below 0 and the variable classification is explored between numeric and character variables.
 
@@ -64,7 +64,7 @@ factor_and_numeric_eight_rand_df = tibble(
 
 Above, the classification of variables is manipulated to factors and numeric values. When a variable is classified as a factor, it cannot be used as a number in functions such as trying to multiply variables. When the logical value is a factor and then manipulated to be numeric, the values are different than when originally classified as numeric. 
 
-#Problem 2
+##Problem 2
 ```{r create data frame for question 2}
 plot_df = tibble(
   x = rnorm(500), 
