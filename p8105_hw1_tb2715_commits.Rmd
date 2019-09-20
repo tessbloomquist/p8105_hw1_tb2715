@@ -90,3 +90,16 @@ proportion = mean(pull(plot_df, vec_logical))
 This vector contains `r round(rows)` and `r round(columns)`. Additionally, the mean of x is `r round(mean_samp, digits = 2)`, the median of x is `r round(median_samp, digits = 2)`, and the standard deviation of x is `r round(stdev_samp, digits = 2)`.
 
 The proportion of cases for which x + y > 1 is `r round(proportion, digits = 2)`
+
+```{r}
+ggplot(plot_df, aes(x = x, y = y)) + geom_point()
+
+ggsave("plot_df.pdf", width = 4, height = 4)
+
+ggplot(plot_df, aes(x = x, y = y, color = num_vector)) + geom_point()
+
+ggplot(plot_df, aes(x = x, y = y, color = factor_vector)) + geom_point()
+```
+
+There is no difference in the points on the graph that are colored as above 1 or less than 1, but the scale is quite different. When the logical factor is classified as numeric, the scale extends from 0 to 1. Not relevant in this scenario where it is only classified as a 0 or 1, but it could demonstrate a range of values. When the logical vector is classified as a factor, the scale is determined by true or false and there are no additional options.
+
